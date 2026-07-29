@@ -24,7 +24,10 @@ export default function HomeScreen() {
       >
         <Text style={{ textAlign: "center" }}>View All Stations</Text>
       </Pressable>
-      <Pressable style={[styles.button, styles.myfavouritesBtn]}>
+      <Pressable
+        onPress={() => navigation.navigate("FavouriteStationsScreen")}
+        style={[styles.button, styles.myfavouritesBtn]}
+      >
         <Text style={{ color: "#ffffff", textAlign: "center" }}>
           View My Favourites
         </Text>

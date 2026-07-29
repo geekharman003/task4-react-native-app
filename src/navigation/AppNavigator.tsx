@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
 import StationListScreen from "../screens/StationListScreen";
 import StationDetailsScreen from "../screens/StationDetailsScreen";
+import FavouriteStationsScreen from "../screens/FavouriteStationsScreen";
 
 export type RootStackParamList = {
   Home: undefined;
@@ -11,6 +12,7 @@ export type RootStackParamList = {
   StationDetailsScreen: {
     id: string;
   };
+  FavouriteStationsScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -27,6 +29,10 @@ export default function AppNavigator() {
         <Stack.Screen
           name="StationDetailsScreen"
           component={StationDetailsScreen}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="FavouriteStationsScreen"
+          component={FavouriteStationsScreen}
         ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>

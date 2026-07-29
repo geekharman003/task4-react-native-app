@@ -42,3 +42,15 @@ export const TOGGLE_FAVOURITE = gql`
     }
   }
 `;
+
+export const GET_FAVOURITE_STATIONS = gql`
+  query GetFavouriteStations {
+    favouriteStations {
+      id
+      name
+      address
+      connectorType
+      rating
+    }
+  }
+`;
