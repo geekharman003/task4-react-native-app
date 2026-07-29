@@ -1,6 +1,5 @@
 {
   "name": "task4-react-native-app",
-  "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
