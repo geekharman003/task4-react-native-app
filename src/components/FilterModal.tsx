@@ -1,5 +1,4 @@
 import { View, Modal, Alert, Pressable, Text } from "react-native";
-import { X } from "lucide-react-native";
 import { FilterModalProps } from "../types/filterModal";
 import { useState } from "react";
 import TextField from "./TextField";

@@ -1,4 +1,4 @@
-import { Text,Pressable } from "react-native";
+import { Text, Pressable } from "react-native";
 import React from "react";
 import { StationCardProps } from "../types/station";
 
@@ -9,9 +9,18 @@ export default function StationCard({
   connectorType,
   availableSlots,
   rating,
+  onPress,
 }: StationCardProps) {
   return (
-    <Pressable style={{ borderWidth: 2, borderColor: "black",marginBottom:10,padding:10 }}>
+    <Pressable
+      onPress={onPress}
+      style={{
+        borderWidth: 2,
+        borderColor: "black",
+        marginBottom: 10,
+        padding: 10,
+      }}
+    >
       <Text>Station Name: {name}</Text>
       <Text>Address {address}</Text>
       <Text>Distance: {distance}</Text>

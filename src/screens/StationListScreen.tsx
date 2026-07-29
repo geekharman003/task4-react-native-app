@@ -1,12 +1,15 @@
 import { View, Text, FlatList, Pressable } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client/react";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { useNavigation } from "@react-navigation/native";
 
 import { GET_STATIONS } from "../graphql/queries";
 import StationCard from "../components/StationCard";
 import { Station } from "../types/station";
 import SearchBar from "../components/SearchBar";
 import FilterModal from "../components/FilterModal";
+import { RootStackParamList } from "../navigation/AppNavigator";
 
 export default function StationListScreen() {
   const { loading, error, data } = useQuery<{ stations: Station[] }>(
@@ -15,6 +18,10 @@ export default function StationListScreen() {
   const [filteredStations, setFilteredStations] = useState<Station[] | []>([]);
   const [text, setText] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
+
+  type NavigationProps = NativeStackNavigationProp<RootStackParamList>;
+
+  const navigation = useNavigation<NavigationProps>();
 
   useEffect(() => {
     setFilteredStations(data?.stations || []);
@@ -96,6 +103,9 @@ export default function StationListScreen() {
               connectorType={item.connectorType}
               availableSlots={item.availableSlots}
               rating={item.rating}
+              onPress={() =>
+                navigation.navigate("StationDetailsScreen", { id: item.id })
+              }
             />
           )}
         />

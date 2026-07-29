@@ -5,6 +5,7 @@ export interface StationCardProps {
   connectorType: string;
   availableSlots: number;
   rating: number;
+  onPress: () => void;
 }
 
 export interface Station {
