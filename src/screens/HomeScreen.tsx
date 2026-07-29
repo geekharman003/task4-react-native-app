@@ -1,10 +1,46 @@
-import { View, Text } from 'react-native'
+import { View, Text, Pressable,StyleSheet } from 'react-native'
 import React from 'react'
 
 export default function HomeScreen() {
   return (
-    <View>
-      <Text>HomeScreen</Text>
+    <View
+      style={{
+        width: "100%",
+        height: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 10,
+      }}
+    >
+      <Pressable style={[styles.button, styles.allStationsBtn]}>
+        <Text style={{ textAlign: "center" }}>View All Stations</Text>
+      </Pressable>
+      <Pressable style={[styles.button, styles.myfavouritesBtn]}>
+        <Text style={{ color: "#ffffff", textAlign: "center" }}>
+          View My Favourites
+        </Text>
+      </Pressable>
+      <Pressable style={[styles.button, styles.myBookingsBtn]}>
+        <Text style={{ textAlign: "center" }}>View My Bookings</Text>
+      </Pressable>
     </View>
-  )
+  );
 }
+
+const styles = StyleSheet.create({
+  button: {
+    width: 100,
+    height: "auto",
+    borderRadius: 10,
+    padding:10
+  },
+  allStationsBtn: {
+    backgroundColor: "skyblue",
+  },
+  myfavouritesBtn: {
+    backgroundColor: "green",
+  },
+  myBookingsBtn: {
+    backgroundColor: "yellow",
+  },
+});
