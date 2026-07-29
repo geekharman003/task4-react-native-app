@@ -1,10 +1,12 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { Text } from "react-native";
+import { ApolloProvider } from "@apollo/client/react";
+import React from "react";
+import { client } from "./src/apollo/client";
 
 export default function App() {
   return (
-    <View>
+    <ApolloProvider client={client}>
       <Text>App</Text>
-    </View>
-  )
+    </ApolloProvider>
+  );
 }
